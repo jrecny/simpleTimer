@@ -12,8 +12,7 @@ const timer = new Timer(duration, startBtn, pauseBtn, {
 		dur = totalDuration;
 	},
 	onTick (timeRemaining) {
-		let offset = perimeter * timeRemaining / dur - perimeter;
-		circle.setAttribute('stroke-dashoffset', offset);
+		circle.setAttribute('stroke-dashoffset', perimeter * timeRemaining / dur - perimeter);
 	},
 	onComplete () {
 		console.log('timer is completed');
