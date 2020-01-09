@@ -15,8 +15,10 @@ const timer = new Timer(duration, startBtn, pauseBtn, {
 	},
 	onTick (timeRemaining) {
 		const perm = perimeter * timeRemaining / dur - perimeter;
-		if (duration.value < originalTime / 4) {
+		if (duration.value <= originalTime / 4) {
 			circle.setAttribute('stroke', 'red');
+		} else if (duration.value <= originalTime / 2) {
+			circle.setAttribute('stroke', 'yellow');
 		}
 		circle.setAttribute('stroke-dashoffset', perm);
 	},
